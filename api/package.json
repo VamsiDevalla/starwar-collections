@@ -4,6 +4,11 @@
   "description": "REST endpoint to serve starwars collection for used who are authenticated",
   "main": "index.js",
   "scripts": {
+    "start:local": "nodemon --watch 'src/**/*' --exec 'ts-node' src/index.ts",
+    "start": "node .",
+    "prebuild": "yarn lint",
+    "build": "tsc",
+    "lint": "eslint --fix src/**/*.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vamsi Devalla",
