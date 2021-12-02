@@ -7,6 +7,7 @@ import { NextFunction, Request, Response } from 'express';
  * @param next next express handler
  */
 export const login = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+  //getting username and password from the request body
   const { username, password } = request.body;
   next(
     response.status(200).json({
@@ -22,6 +23,7 @@ export const login = async (request: Request, response: Response, next: NextFunc
  * @param next next express handler
  */
 export const logout = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+  //getting authorization token from request headers
   const { authorization } = request.headers;
   next(
     response.status(200).json({
