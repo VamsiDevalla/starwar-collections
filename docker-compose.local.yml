@@ -6,12 +6,36 @@ services:
     build:
       context: api
       dockerfile: ./Dockerfile.local
-    restart: unless-stopped
-    ports:
-      - $API_LOCAL_PORT:$API_DOCKER_PORT
     volumes:
       - ./api/:/api
       - /api/node_modules
+    networks:
+      - starwars-collection-local
+  
+  ui-local:
+    image: starwars-collection-ui-local
+    container_name: 'starwars-collection-ui-local'
+    build:
+      context: ui
+      dockerfile: ./Dockerfile.local
+    volumes:
+      - ./ui/:/ui
+      - /ui/node_modules
+    networks:
+      - starwars-collection-local
+  
+  nginx:
+    depends_on:
+      - api-local
+      - ui-local
+    image: starwars-collection-nginx-local
+    container_name: 'starwars-collection-nginx-local'
+    restart: always
+    build:
+      dockerfile: Dockerfile.nginx.local
+      context: .
+    ports:
+      - $NGINX_DEV_LOCAL_PORT:$NGINX_DOCKER_PORT
     networks:
       - starwars-collection-local
 

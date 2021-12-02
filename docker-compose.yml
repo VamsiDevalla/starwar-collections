@@ -7,10 +7,22 @@ services:
       context: api
       dockerfile: ./Dockerfile
     restart: unless-stopped
-    ports:
-      - $API_LOCAL_PORT:$API_DOCKER_PORT
     networks:
       - starwars-collection
+  
+  nginx:
+    depends_on:
+      - api
+    image: starwars-collection-nginx
+    container_name: 'starwars-collection-nginx'
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./ui
+    ports:
+      - $NGINX_LOCAL_PORT:$NGINX_DOCKER_PORT
+    networks:
+      - starwars-collection 
 
 networks:
   starwars-collection:
