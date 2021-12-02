@@ -1,0 +1,23 @@
+{
+    "semi": true,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "printWidth": 120,
+    "tabWidth": 2,
+    "arrowParens": "avoid",
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "html"
+        }
+      },
+      {
+        "files": "*.component.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
+  }
