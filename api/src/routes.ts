@@ -1,4 +1,4 @@
-import AuthorizationController from './authorization/authorization.controller';
+import AuthorizationController from './authentication/authentication.controller';
 import { Application, Router } from 'express';
 import StarwarsCollectionController from './starwars-collection/starwars-collection.controller';
 

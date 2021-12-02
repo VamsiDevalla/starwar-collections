@@ -1,7 +1,7 @@
 FROM node:14-alpine
 WORKDIR /api
-COPY ["package.json", "package-lock.json", "./"]
-RUN npm install
+COPY ["package.json", "yarn.lock", "./"]
+RUN yarn
 COPY . .
 EXPOSE 8000
-CMD ["npm", "run","start:local"]
+CMD ["yarn","start:local"]

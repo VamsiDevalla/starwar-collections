@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { login, logout } from './authorization.handlers';
+import { login, logout } from './authentication.handlers';
 
 // new express router to handle authorization routes
 const AuthorizationController: Router = Router();
