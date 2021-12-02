@@ -1,5 +1,11 @@
 import { NextFunction, Request, Response } from 'express';
 
+/**
+ * handles user login calls
+ * @param request express request object
+ * @param response express response object
+ * @param next next express handler
+ */
 export const login = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
   const { username, password } = request.body;
   next(
