@@ -1,0 +1,16 @@
+version: '3.4'
+services:
+  api:
+    image: starwars-collection-api
+    container_name: 'starwars-collection-api'
+    build:
+      context: api
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    ports:
+      - $API_LOCAL_PORT:$API_DOCKER_PORT
+    networks:
+      - starwars-collection
+
+networks:
+  starwars-collection:
