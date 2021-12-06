@@ -4,7 +4,7 @@ import StarwarsCollectionController from './starwars-collection/starwars-collect
 
 const _routes: [string, Router][] = [
   ['/auth', AuthorizationController],
-  ['/getMyStarWarsCollection', StarwarsCollectionController],
+  ['/starwar-collections', StarwarsCollectionController],
 ];
 
 /**

@@ -12,7 +12,7 @@ const userCollections: Map<string, number[]> = new Map([
  * @param response express response object
  * @param next next express handler
  */
-export const getCollections = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+export const getMyCollections = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
   //getting user id token from request headers
   const userId = request.headers['sw-user-id'] || '';
   if (userId) {
@@ -27,4 +27,14 @@ export const getCollections = async (request: Request, response: Response, next:
   } else {
     next(response.status(400).json(new StarWarsError(1, 'userId header missing')));
   }
+};
+
+/**
+ * gives a list of star war collection items
+ * @param request express request object
+ * @param response express response object
+ * @param next next express handler
+ */
+export const getCollections = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+  next(response.status(200).json(movies));
 };
