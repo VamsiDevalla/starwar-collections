@@ -1,0 +1,7 @@
+<nav>
+  STARWARS Collection
+  <ng-container *ngIf="isLoggedIn">
+    {{userName}}
+    <button (click)="logOut()">logout</button>
+  </ng-container>
+</nav>
