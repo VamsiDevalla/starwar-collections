@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Router, Event, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
+import { slideInAnimation } from './app.animation';
 
 @Component({
   selector: 'swc-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: [slideInAnimation],
 })
 export class AppComponent {
   nextRouteLoading = false;

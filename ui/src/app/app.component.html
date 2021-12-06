@@ -6,4 +6,6 @@
   <swc-top-nav></swc-top-nav>
 </header>
 <div class="spinner" *ngIf="nextRouteLoading"></div>
-<router-outlet></router-outlet>
+<div [@slideInAnimation]="outletVar.isActivated ? outletVar.activatedRoute : ''">
+  <router-outlet #outletVar="outlet"></router-outlet>
+</div>
