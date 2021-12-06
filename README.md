@@ -1,3 +1,33 @@
+local run: 
+```Shell
+docker-compose -f docker-compose-local.yml  up
+```
+
+prod build: 
+```
+docker-compose up
+```
+
+remove all:
+
+```Shell
+docker container rm -f $(docker container ls -qa)
+docker image rm -f $(docker image ls -q)
+docker volume rm -f $(docker volume ls -q)
+```
+
+when install new npm package
+```
+yarn add $YOUR_NEW_NPM_MODULE
+
+# remove the image where the new module is installed
+docker image rm -f $Image_Name
+
+# rebuild, while making sure it doesn't use the internal cache 
+docker-compose build --no-cache
+docker-compose up
+```
+
 Task Overview
 
 You will develop a small application in JavaScript with two parts – a front end and a backend.  The backend will assume that two users can authenticate (Josh and Justin).  The backend will expose an API to retrieve information about each user's Star Wars collection.
