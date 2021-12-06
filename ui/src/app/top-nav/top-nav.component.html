@@ -1,21 +1,21 @@
 <nav class="nav-bar">
   <div class="menu-items">
-    <div class="menu" routerLink="/collection" routerLinkActive="menu--active">
-      <a class="menu__link"> Films </a>
+    <div class="menu-item" routerLink="/collection" routerLinkActive="menu--active">
+      <a class="menu-item__link"> All Items </a>
     </div>
-    <div class="menu" routerLink="/collection/myCollection" routerLinkActive="menu--active">
-      <a class="menu__link"> My Collection </a>
+    <div class="menu-item" routerLink="/collection/myCollection" routerLinkActive="menu--active">
+      <a class="menu-item__link"> My Collection </a>
     </div>
   </div>
   <div class="user-items">
-    <div class="menu" *ngIf="isLoggedIn">
+    <div class="menu-item" *ngIf="isLoggedIn">
       <span class="user__name">{{ userName | titlecase }}</span>
     </div>
-    <div class="menu" *ngIf="isLoggedIn">
-      <a class="menu__link" (click)="logOut()"> logout </a>
+    <div class="menu-item" *ngIf="isLoggedIn">
+      <a class="menu-item__link" (click)="logOut()"> logout </a>
     </div>
-    <div class="menu" *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="menu--active">
-      <a class="menu__link"> Login </a>
+    <div class="menu-item" *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="menu--active">
+      <a class="menu-item__link"> Login </a>
     </div>
   </div>
 </nav>

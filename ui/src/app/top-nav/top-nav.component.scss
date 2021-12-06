@@ -13,7 +13,7 @@
   .menu-items {
     list-style: none;
   }
-  .menu {
+  .menu-item {
     &--active {
       background-color: $g-root__color--primary--01b;
       color: $g-root__color--primary--01d;
@@ -47,7 +47,7 @@
     justify-content: space-between;
   }
 
-  .menu {
+  .menu-item {
     padding: 1em;
   }
 }
@@ -61,7 +61,7 @@
     display: block;
   }
 
-  .menu {
+  .menu-item {
     border-top: solid 1px rgba($g-root__color--primary--01d, 0.5);
     padding: 1em 0;
 
