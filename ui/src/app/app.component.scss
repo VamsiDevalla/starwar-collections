@@ -1,3 +1,8 @@
 @import 'scss/resets';
 @import 'scss/globals';
 @import 'scss/header';
+@import 'spinner';
+
+:host {
+  @include g-layout__spinner;
+}

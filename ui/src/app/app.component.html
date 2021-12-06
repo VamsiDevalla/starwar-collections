@@ -1,11 +1,9 @@
 <header class="header">
   <div class="header__content">
-      <h1
-          class="header__title">
-          StarWars Collections
-      </h1>
-      <span class="header__sub-title">A Lenovo takeover project</span>
+    <h1 class="header__title">StarWars Collections</h1>
+    <span class="header__sub-title">A Lenovo takeover project</span>
   </div>
   <swc-top-nav></swc-top-nav>
 </header>
+<div class="spinner" *ngIf="nextRouteLoading"></div>
 <router-outlet></router-outlet>
