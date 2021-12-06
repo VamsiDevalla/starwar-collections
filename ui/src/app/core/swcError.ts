@@ -1,3 +1,8 @@
 export class SwcError {
-  constructor(errorType: string, errorCode: number, message: string, error: any | undefined) {}
+  constructor(
+    public errorType: string,
+    public errorCode: number,
+    public message: string,
+    public error: any | undefined,
+  ) {}
 }
