@@ -1,7 +1,21 @@
-<nav>
-  STARWARS Collection
-  <ng-container *ngIf="isLoggedIn">
-    {{userName}}
-    <button (click)="logOut()">logout</button>
-  </ng-container>
+<nav class="nav-bar">
+  <div class="menu-items">
+    <div class="menu">
+      <a class="menu__link"> Films </a>
+    </div>
+    <div class="menu">
+      <a class="menu__link"> My Collection </a>
+    </div>
+  </div>
+  <div class="user-items">
+    <div class="menu" *ngIf="isLoggedIn">
+      <span class="user__name">{{ userName | titlecase }}</span>
+    </div>
+    <div class="menu" *ngIf="isLoggedIn">
+      <a class="menu__link" (click)="logOut()"> logout </a>
+    </div>
+    <div class="menu" *ngIf="!isLoggedIn">
+      <a class="menu__link"> Login </a>
+    </div>
+  </div>
 </nav>
