@@ -41,8 +41,8 @@ export class AuthService {
       next: () => (this.currentUser = null),
       error: err => this.handleError(err),
       complete: () => {
-        this.logger.log('loggedOut');
-        this.router.navigate([this.redirectUrl]);
+        this.logger.log('loggedOut', `redirecting to login page`);
+        this.router.navigate(['/login']);
       },
     });
   }
