@@ -4,6 +4,7 @@ import { SwcCollectionResolver } from './swc-collection.resolver';
 import { SwcCollectionComponent } from './swc-collection.component';
 import { AuthGuard } from '../user/auth.guard';
 
+// Routes for swc-collection module
 const routes: Routes = [
   {
     path: '',

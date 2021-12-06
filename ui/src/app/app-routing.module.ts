@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RouteNotFoundComponent } from './route-not-found/route-not-found.component';
 import { SelectiveStrategyService } from './selective-strategy.service';
-import { AuthGuard } from './user/auth.guard';
 
+// Routers for the application
 const routes: Routes = [
   {
     path: 'collection',

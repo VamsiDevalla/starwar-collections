@@ -10,7 +10,12 @@ import { SwcCollectionService } from './swc-collection.service';
 export class SwcCollectionResolver implements Resolve<IFilmsResolved> {
   constructor(private collectionService: SwcCollectionService) {}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IFilmsResolved> {
+    /**
+     * resolves starwars collection data required for all collections and current user collection
+     */
+    // Resolves all collection items by default
     let filmResolver$ = this.collectionService.getCollections()
+    // Resolves current user collection when the path is myCollection
     if (state.url === '/collection/myCollection') {
        filmResolver$ =  this.collectionService.getMyStarWarsCollection()
     }

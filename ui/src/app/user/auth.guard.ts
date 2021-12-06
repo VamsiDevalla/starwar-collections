@@ -12,11 +12,14 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot,
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    // allows route if the user is already logged in
     if (this.authService.isAuthenticated) {
       return true;
     }
+    // setting current url to redirectUrl after successful login
     this.authService.redirectUrl = state.url;
-    this.router.navigate(['/login'], { replaceUrl: true });
+    // navigates to login and restricts current path if the user is not logged in
+    this.router.navigate(['/login']);
     return false;
   }
 }

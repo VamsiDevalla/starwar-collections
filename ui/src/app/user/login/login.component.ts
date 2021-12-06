@@ -16,7 +16,11 @@ export class LoginComponent {
   error!: AuthError;
   constructor(private authService: AuthService) {}
 
+  /**
+   * logs in the user using the current values of the login form
+   */
   login() {
+    // enabling loading spinner
     this.loading = true;
     this.authService
       .login(this.loginModelData.userId, this.loginModelData.password)

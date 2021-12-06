@@ -16,9 +16,10 @@ export class TopNavComponent {
   }
   constructor(private userService: AuthService, private router: Router) {}
 
+  /**
+   * logs out the current user
+   */
   logOut() {
-    const currentUrl = this.router.routerState.snapshot.url;
-    this.userService.redirectUrl = '/';
     this.userService.logout();
   }
 }

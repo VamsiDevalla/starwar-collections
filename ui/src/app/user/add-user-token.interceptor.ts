@@ -8,12 +8,16 @@ export class AddUserTokenInterceptor implements HttpInterceptor {
   constructor(private authService: AuthService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    const userId = this.authService.user?.name;
+    // gets current token from auth service
+    const token = this.authService.user?.name;
+    // checks if user is logged in
     const isLoggedIn = this.authService.isAuthenticated;
+    // checks if the current route needs token
     const isApiUrl = request.url.startsWith('/api');
-    if (isLoggedIn && isApiUrl && userId) {
+    // token header is added when all the above checks passed
+    if (isLoggedIn && isApiUrl && token) {
       request = request.clone({
-        setHeaders: { 'sw-user-id': userId },
+        setHeaders: { 'sw-user-id': token },
       });
     }
     return next.handle(request);

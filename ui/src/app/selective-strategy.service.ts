@@ -7,6 +7,7 @@ import { Observable, of } from 'rxjs';
 })
 export class SelectiveStrategyService implements PreloadingStrategy {
   preload(route: Route, load: Function): Observable<any> {
+    // preloading a module only if preload property is defined with a truthy value in router configuration
     if (route.data?.['preload']) {
       return load();
     }

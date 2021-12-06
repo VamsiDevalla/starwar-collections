@@ -11,6 +11,10 @@ export class SwcCollectionService {
   readonly basePath = '/api/starwar-collections';
   constructor(private http: HttpClient, private logger: LoggerService) {}
 
+  /**
+   * fetches all the starwars collectable items
+   * @returns an Observable of starwars collection array
+   */
   getCollections(): Observable<IFilm[]> {
     return this.http.get<IFilm[]>(this.basePath).pipe(
       tap(movies => this.logger.log('Successfully received movies collection', movies)),
@@ -18,6 +22,10 @@ export class SwcCollectionService {
     );
   }
 
+  /**
+   * fetches starwars collection of the current user
+   * @returns an Observable of starwars collection array
+   */
   getMyStarWarsCollection(): Observable<IFilm[]> {
     return this.http.get<IFilm[]>(this.basePath + '/getMyStarWarsCollection').pipe(
       tap(movies => this.logger.log('Successfully received movies collection for the user', movies)),
@@ -25,6 +33,9 @@ export class SwcCollectionService {
     );
   }
 
+  /**
+   * Handles all swc service errors
+   */
   private handleError = (error: HttpErrorResponse) => {
     const collectionServiceError = new SwcCollectionError(
       error?.status || 0,
