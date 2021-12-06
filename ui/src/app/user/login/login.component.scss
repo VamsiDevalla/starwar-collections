@@ -1,9 +1,11 @@
 @import 'colors';
+@import 'spinner';
 
 :host {
   display: flex;
   font-size: 1rem;
   justify-content: center;
+  @include g-layout__spinner;
 }
 
 .login-container {
@@ -26,6 +28,9 @@
   margin: 1em 0;
   display: flex;
   flex-direction: column;
+  &__errorMsg {
+    color: $g-root__color--primary--01f;
+  }
   &__submit {
     align-self: center;
     width: 50%;
@@ -46,7 +51,12 @@
       background-color: $g-root__color--primary--01b;
       color: $g-root__color--primary--01d;
       border: 0.1em solid $g-root__color--primary--01d;
-      padding: 0 1.8em 0 1.8em;
+    }
+
+    &:disabled {
+      background-color: $g-root__color--primary--01c;
+      border: none;
+      cursor: auto;
     }
   }
 }

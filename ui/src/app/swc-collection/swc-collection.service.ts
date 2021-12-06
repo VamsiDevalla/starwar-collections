@@ -25,10 +25,10 @@ export class SwcCollectionService {
     );
   }
 
-  private handleError(error: HttpErrorResponse) {
+  private handleError = (error: HttpErrorResponse) => {
     const collectionServiceError = new SwcCollectionError(
       error?.status || 0,
-      error?.error?.message || error?.statusText || 'unknown error',
+      error?.error.message || error?.statusText || 'unknown error',
       error,
     );
     this.logger.error('Collection Service Error', collectionServiceError);

@@ -12,7 +12,7 @@
         name="userId"
         #userIdVar="ngModel"
         required
-        minlength="5"
+        minlength="3"
         autocomplete="username"
         [ngClass]="{ 'is-invalid': userIdVar.touched && !userIdVar.valid }"
       />
@@ -28,11 +28,13 @@
         name="password"
         #passwordVar="ngModel"
         required
-        minlength="8"
+        minlength="4"
         autocomplete="current-password"
       />
       <span class="form__field--error" *ngIf="passwordVar.errors && passwordVar.dirty">Please enter valid userId</span>
     </div>
-    <button class="form__submit" type="submit">Login</button>
+    <pre class="form__errorMsg" *ngIf="error">{{ error.message }}</pre>
+    <button class="form__submit" type="submit" [disabled]="!loginFormModel.valid">Login</button>
   </form>
 </div>
+<div class="spinner" *ngIf="loading"></div>
