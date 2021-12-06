@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RouteNotFoundComponent } from './route-not-found/route-not-found.component';
 import { AuthGuard } from './user/auth.guard';
 
 const routes: Routes = [
@@ -19,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'collection',
+    component: RouteNotFoundComponent,
   },
 ];
 

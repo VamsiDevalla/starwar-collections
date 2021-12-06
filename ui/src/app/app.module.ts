@@ -5,9 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
+import { RouteNotFoundComponent } from './route-not-found/route-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, TopNavComponent],
+  declarations: [AppComponent, TopNavComponent, RouteNotFoundComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
