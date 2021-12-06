@@ -8,10 +8,10 @@ import { NextFunction, Request, Response } from 'express';
  */
 export const login = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
   //getting username and password from the request body
-  const { username, password } = request.body;
+  const { userId, password } = request.body;
   next(
-    response.status(200).json({
-      message: `successfully authenticated the user ${username} using the password ${password}`,
+    response.setHeader('token', password).status(200).json({
+      name: userId,
     }),
   );
 };
