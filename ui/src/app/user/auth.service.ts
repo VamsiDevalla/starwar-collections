@@ -4,7 +4,7 @@ import { throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { IUser } from './user';
 import { LoggerService } from '../core/logger.service';
-import { AuthError } from './authError';
+import { AuthError } from './auth-error';
 
 @Injectable({
   providedIn: 'root',
@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   logout(): void {
-    this.http.post<boolean>(`${this.basePath}/logout`, null).subscribe({
+    this.http.delete(`${this.basePath}/logout`).subscribe({
       next: () => (this.currentUser = null),
       error: err => this.handleError(err),
       complete: () => {
