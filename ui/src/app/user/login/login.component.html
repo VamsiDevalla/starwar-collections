@@ -1,27 +1,38 @@
-<form (ngSubmit)="login()" #loginFormModel="ngForm">
-  <label for="userId">User Name</label>
-  <input
-    id="userId"
-    type="text"
-    [(ngModel)]="loginModelData.userId"
-    name="userId"
-    #userIdVar="ngModel"
-    required
-    minlength="5"
-    autocomplete="username"
-    [ngClass]="{ 'is-invalid': userIdVar.touched && !userIdVar.valid }"
-  />
-  <span *ngIf="userIdVar.errors && userIdVar.dirty">Please enter valid userId</span>
-  <label for="password">Password</label>
-  <input
-    id="password"
-    type="password"
-    [(ngModel)]="loginModelData.password"
-    name="password"
-    #passwordVar="ngModel"
-    required
-    minlength="8"
-    autocomplete="current-password"
-  />
-  <button type="submit">Login</button>
-</form>
+<div class="login-container">
+  <h1 class="login__title">Login</h1>
+  <span class="login__subtitle">Enter your User Id and Password</span>
+  <form class="form" (ngSubmit)="login()" #loginFormModel="ngForm">
+    <div class="form__field">
+      <label class="form__field--label" for="userId">User Name*</label>
+      <input
+        class="form__field--input"
+        id="userId"
+        type="text"
+        [(ngModel)]="loginModelData.userId"
+        name="userId"
+        #userIdVar="ngModel"
+        required
+        minlength="5"
+        autocomplete="username"
+        [ngClass]="{ 'is-invalid': userIdVar.touched && !userIdVar.valid }"
+      />
+      <span class="form__field--error" *ngIf="userIdVar.errors && userIdVar.dirty">Please enter valid userId</span>
+    </div>
+    <div class="form__field">
+      <label class="form__field--label" for="password">Password*</label>
+      <input
+        class="form__field--input"
+        id="password"
+        type="password"
+        [(ngModel)]="loginModelData.password"
+        name="password"
+        #passwordVar="ngModel"
+        required
+        minlength="8"
+        autocomplete="current-password"
+      />
+      <span class="form__field--error" *ngIf="passwordVar.errors && passwordVar.dirty">Please enter valid userId</span>
+    </div>
+    <button class="form__submit" type="submit">Login</button>
+  </form>
+</div>

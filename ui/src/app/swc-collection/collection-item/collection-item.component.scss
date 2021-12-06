@@ -1,0 +1,24 @@
+@import 'colors';
+
+:host {
+  display: block;
+  font-size: 1rem;
+}
+
+.film {
+  display: flex;
+  flex-direction: column;
+  background-color: $g-root__color--primary--02a;
+  color: $g-root__color--primary--01d;
+  border: 0.1em solid $g-root__color--primary--01d;
+  border-radius: 1em;
+  padding: 2em;
+  cursor: pointer;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

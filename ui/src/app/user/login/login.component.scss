@@ -1,0 +1,73 @@
+@import 'colors';
+
+:host {
+  display: flex;
+  font-size: 1rem;
+  justify-content: center;
+}
+
+.login-container {
+  width: 50%;
+  max-width: 50em;
+  border: 0.1em solid $g-root__color--primary--01d;
+  border-radius: 1em;
+  padding: 2em;
+  color: $g-root__color--primary--01d;
+  background-color: $g-root__color--primary--02a;
+}
+
+.login__title,
+.login__subtitle {
+  display: block;
+  text-align: center;
+}
+
+.form {
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  &__submit {
+    align-self: center;
+    width: 50%;
+    max-width: 15em;
+    min-width: max-content;
+    line-height: 3em;
+    padding: 0 2em 0 2em;
+    margin-top: 2em;
+    font-size: 1.2em;
+    background-color: $g-root__color--primary--01a;
+    color: $g-root__color--primary--01d;
+    text-transform: capitalize;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $g-root__color--primary--01b;
+      color: $g-root__color--primary--01d;
+      border: 0.1em solid $g-root__color--primary--01d;
+      padding: 0 1.8em 0 1.8em;
+    }
+  }
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  &--input {
+    border: none;
+    outline: none;
+    padding: 0.8em;
+    width: 100%;
+    line-height: 2em;
+    margin: 0.5em 0;
+  }
+  &--error {
+    align-self: flex-end;
+    color: $g-root__color--primary--01f;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: 600;
+  }
+}

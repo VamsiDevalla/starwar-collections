@@ -1,4 +1,6 @@
-<h1>{{pageTitle}}</h1>
-<div *ngFor="let film of films">
-  <pre>{{film | json}}</pre>
+<div class="collection-container">
+  <h1 class="collection__title">{{ pageTitle }}</h1>
+  <div class="collection">
+    <swc-collection-item class="collection__item" *ngFor="let film of films" [film]="film"></swc-collection-item>
+  </div>
 </div>
