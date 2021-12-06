@@ -1,0 +1,27 @@
+<form (ngSubmit)="login()" #loginFormModel="ngForm">
+  <label for="userId">User Name</label>
+  <input
+    id="userId"
+    type="text"
+    [(ngModel)]="loginModelData.userId"
+    name="userId"
+    #userIdVar="ngModel"
+    required
+    minlength="5"
+    autocomplete="username"
+    [ngClass]="{ 'is-invalid': userIdVar.touched && !userIdVar.valid }"
+  />
+  <span *ngIf="userIdVar.errors && userIdVar.dirty">Please enter valid userId</span>
+  <label for="password">Password</label>
+  <input
+    id="password"
+    type="password"
+    [(ngModel)]="loginModelData.password"
+    name="password"
+    #passwordVar="ngModel"
+    required
+    minlength="8"
+    autocomplete="current-password"
+  />
+  <button type="submit">Login</button>
+</form>
