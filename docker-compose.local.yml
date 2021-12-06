@@ -8,7 +8,7 @@ services:
       dockerfile: ./Dockerfile.local
     volumes:
       - ./api/:/api
-      - /api/node_modules
+      - server-nodemodules:/api/node_modules
     networks:
       - starwars-collection-local
   
@@ -20,7 +20,7 @@ services:
       dockerfile: ./Dockerfile.local
     volumes:
       - ./ui/:/ui
-      - /ui/node_modules
+      - ui-nodemodules:/ui/node_modules
     networks:
       - starwars-collection-local
   
@@ -41,3 +41,6 @@ services:
 
 networks:
   starwars-collection-local:
+volumes:
+  server-nodemodules:
+  ui-nodemodules:
