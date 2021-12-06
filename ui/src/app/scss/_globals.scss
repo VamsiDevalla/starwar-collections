@@ -1,0 +1,9 @@
+@import 'headers';
+
+:host {
+    font-size: 1rem;
+}
+
+h1 {
+    @include g-typography__h1;
+}

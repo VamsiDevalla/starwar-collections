@@ -1,0 +1,24 @@
+@import 'colors';
+@import 'container';
+@import 'headers';
+
+.header {
+    background: $g-root__color--primary--02a;
+    display: block;
+    font-family: arial, sans-serif;
+    overflow: hidden;
+    margin-bottom: 1.8em;
+
+    &__content {
+        @include g-layout__container;
+    }
+
+    &__title {
+        @include g-typography__h1;
+        color: $g-root__color--primary--01d;
+    }
+
+    &__sub-title {
+        color: $g-root__color--primary--01e;
+    }
+  }
