@@ -42,7 +42,7 @@ export class AuthService {
       error: err => this.handleError(err),
       complete: () => {
         this.logger.log('loggedOut', `redirecting to login page`);
-        this.router.navigate(['/login']);
+        this.router.navigate(['/collection']);
       },
     });
   }

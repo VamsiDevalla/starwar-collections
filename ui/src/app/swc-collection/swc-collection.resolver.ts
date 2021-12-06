@@ -10,7 +10,11 @@ import { SwcCollectionService } from './swc-collection.service';
 export class SwcCollectionResolver implements Resolve<IFilmsResolved> {
   constructor(private collectionService: SwcCollectionService) {}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IFilmsResolved> {
-    return this.collectionService.getCollections().pipe(
+    let filmResolver$ = this.collectionService.getCollections()
+    if (state.url === '/collection/myCollection') {
+       filmResolver$ =  this.collectionService.getMyStarWarsCollection()
+    }
+    return filmResolver$.pipe(
       map(films => ({ films })),
       catchError(error => of({ error: <SwcCollectionError>error })),
     );

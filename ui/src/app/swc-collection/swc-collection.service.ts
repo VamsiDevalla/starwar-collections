@@ -8,12 +8,19 @@ import { IFilm, SwcCollectionError } from './swc-collection';
   providedIn: 'root',
 })
 export class SwcCollectionService {
-  readonly basePath = '/api/getMyStarWarsCollection';
+  readonly basePath = '/api/starwar-collections';
   constructor(private http: HttpClient, private logger: LoggerService) {}
 
   getCollections(): Observable<IFilm[]> {
     return this.http.get<IFilm[]>(this.basePath).pipe(
       tap(movies => this.logger.log('Successfully received movies collection', movies)),
+      catchError(this.handleError),
+    );
+  }
+
+  getMyStarWarsCollection(): Observable<IFilm[]> {
+    return this.http.get<IFilm[]>(this.basePath + '/getMyStarWarsCollection').pipe(
+      tap(movies => this.logger.log('Successfully received movies collection for the user', movies)),
       catchError(this.handleError),
     );
   }

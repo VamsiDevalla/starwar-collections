@@ -13,13 +13,14 @@ export class SwcCollectionComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.onFilmResolve(this.route.snapshot.data['resolvedFilms']);
+    this.onFilmResolve(this.route.snapshot.data['resolvedFilms'], this.route.snapshot.data?.['path']);
   }
 
-  onFilmResolve(responseObj: IFilmsResolved) {
+  onFilmResolve(responseObj: IFilmsResolved, path: string) {
     if (responseObj.error) {
-      this.pageTitle = 'No Collections Found';
+      this.pageTitle = path === 'my_collections' ? 'No Collections Found' : 'No Items Found';
     } else {
+      this.pageTitle = path === 'my_collections' ? 'Your Collection' : 'All Items';
       this.films = responseObj.films || [];
     }
   }

@@ -6,7 +6,6 @@ import { AuthGuard } from './user/auth.guard';
 const routes: Routes = [
   {
     path: 'collection',
-    canActivate: [AuthGuard],
     loadChildren: () => import('./swc-collection/swc-collection.module').then(m => m.SwcCollectionModule),
   },
   {

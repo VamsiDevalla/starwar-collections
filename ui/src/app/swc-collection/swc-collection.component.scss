@@ -6,15 +6,21 @@
 }
 
 .collection-container {
-  padding: 2em;
+  padding: 0 2em;
 }
 
 .collection {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 1em;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2em;
   &__title {
     color: $g-root__color--primary--01d;
+    text-align: center;
+    padding: 0.2em;
+    border-radius: 0.2em;
+    margin-bottom: 1em;
+    background-color: $g-root__color--primary--02a;
+    border: 0.05em solid $g-root__color--primary--01d;
   }
 }
