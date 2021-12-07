@@ -2,11 +2,14 @@ local run:
 ```Shell
 docker-compose -f docker-compose-local.yml  up
 ```
+App runs on localhost:8000
 
 prod build: 
 ```
 docker-compose up
 ```
+App runs on localhost:8080
+
 
 remove all:
 
