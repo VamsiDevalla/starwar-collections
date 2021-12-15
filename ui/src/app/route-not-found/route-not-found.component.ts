@@ -5,11 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './route-not-found.component.html',
   styleUrls: ['./route-not-found.component.scss']
 })
-export class RouteNotFoundComponent implements OnInit {
+export class RouteNotFoundComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
