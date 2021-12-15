@@ -1,9 +1,9 @@
 <nav class="nav-bar">
   <div class="menu-items">
-    <div class="menu-item" routerLink="/collection" routerLinkActive="menu--active">
+    <div class="menu-item" routerLink="/collection" routerLinkActive="menu-item--active">
       <a class="menu-item__link"> All Items </a>
     </div>
-    <div class="menu-item" routerLink="/collection/myCollection" routerLinkActive="menu--active">
+    <div class="menu-item" routerLink="/collection/myCollection" routerLinkActive="menu-item--active">
       <a class="menu-item__link"> My Collection </a>
     </div>
   </div>
@@ -14,7 +14,7 @@
     <div class="menu-item" *ngIf="isLoggedIn">
       <a class="menu-item__link" (click)="logOut()"> logout </a>
     </div>
-    <div class="menu-item" *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="menu--active">
+    <div class="menu-item" *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="menu-item--active">
       <a class="menu-item__link"> Login </a>
     </div>
   </div>

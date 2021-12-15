@@ -10,29 +10,31 @@
 
 .nav-bar {
   @include g-layout__container;
-  .menu-items {
-    list-style: none;
-  }
-  .menu-item {
-    &--active {
-      background-color: $g-root__color--primary--01b;
-      color: $g-root__color--primary--01d;
+  .menu {
+    &-items {
+      list-style: none;
     }
-    &__link {
-      color: var(--link--color, $g-root__color--primary--01d);
+    &-item {
+      &--active {
+        background-color: $g-root__color--primary--01b;
+        color: $g-root__color--primary--01d;
+      }
+      &__link {
+        color: var(--link--color, $g-root__color--primary--01d);
+        cursor: pointer;
+        font-size: 1.2em;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .user__name {
+      color: var(--user-name--color, $g-root__color--primary--01e);
       cursor: pointer;
       font-size: 1.2em;
       text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
     }
-  }
-  .user__name {
-    color: var(--user-name--color, $g-root__color--primary--01e);
-    cursor: pointer;
-    font-size: 1.2em;
-    text-decoration: none;
   }
 }
 
